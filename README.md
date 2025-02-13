@@ -63,6 +63,5 @@ yarn dev
 http://localhost:3000
 ```
 
-## 라이선스
-
-MIT License
+## 데모
+https://tarot-fortune.vercel.app/

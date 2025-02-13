@@ -9,16 +9,24 @@ Next.js로 구현한 타로 운세 웹 애플리케이션입니다. 사용자는
 - 반응형 디자인으로 모바일/데스크톱 환경 모두 지원
 
 ## 스크린샷
-
-### 메인 화면
-![메인 화면](https://raw.githubusercontent.com/lhg1006/portfolio-images/e68c1d680a5e0ccbda716b34dec41439bc986949/images/project/tarot-0.png)
-
-### 카드 선택 화면
-![카드 선택 화면](https://raw.githubusercontent.com/lhg1006/portfolio-images/e68c1d680a5e0ccbda716b34dec41439bc986949/images/project/tarot-1.png)
-
-### 결과 화면
-![결과 화면](https://raw.githubusercontent.com/lhg1006/portfolio-images/e68c1d680a5e0ccbda716b34dec41439bc986949/images/project/tarot-2.png)
-
+<table>
+<tr>
+<td><b>메인 화면</b></td>
+<td><b>카드 선택 화면</b></td>
+</tr>
+<tr>
+<td><img src="https://raw.githubusercontent.com/lhg1006/portfolio-images/e68c1d680a5e0ccbda716b34dec41439bc986949/images/project/tarot-0.png" width="100%" alt="메인 화면"></td>
+<td><img src="https://raw.githubusercontent.com/lhg1006/portfolio-images/e68c1d680a5e0ccbda716b34dec41439bc986949/images/project/tarot-1.png" width="100%" alt="카드 선택 화면"></td>
+</tr>
+<tr>
+<td><b>결과 화면</b></td>
+<td></td>
+</tr>
+<tr>
+<td><img src="https://raw.githubusercontent.com/lhg1006/portfolio-images/e68c1d680a5e0ccbda716b34dec41439bc986949/images/project/tarot-2.png" width="100%" alt="결과 화면"></td>
+<td></td>
+</tr>
+</table>
 ## 기술 스택
 
 - Next.js

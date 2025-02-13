@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import { useEffect, useState, Suspense } from "react"
 import { useSearchParams, useRouter } from "next/navigation"
 import { motion } from "framer-motion"
 import { tarotCards, type TarotCard as TarotCardType } from "../../lib/tarotData"
@@ -9,7 +9,7 @@ import { clearTodaysCard } from "../../lib/utils"
 import { useTheme } from "next-themes"
 import { Moon, Sun } from "lucide-react"
 
-export default function Result() {
+function ResultContent() {
   const searchParams = useSearchParams()
   const router = useRouter()
   const [card, setCard] = useState<TarotCardType | null>(null)
@@ -49,7 +49,7 @@ export default function Result() {
   }
 
   return (
-    <main className={`flex min-h-screen flex-col items-center justify-center p-6 transition-colors duration-300 ${
+    <main className={`min-h-screen flex-col items-center justify-start p-6 overflow-y-auto transition-colors duration-300 ${
       theme === "light"
         ? "bg-gradient-to-br from-white to-blue-50 text-futuristic-dark"
         : "bg-gradient-radial from-futuristic-dark to-black text-white"
@@ -194,6 +194,18 @@ export default function Result() {
         )}
       </motion.button>
     </main>
+  )
+}
+
+export default function Result() {
+  return (
+    <Suspense fallback={
+      <div className="flex min-h-screen items-center justify-center bg-gradient-radial from-futuristic-dark to-black">
+        <div className="text-2xl font-bold text-neon-blue animate-pulse">Loading...</div>
+      </div>
+    }>
+      <ResultContent />
+    </Suspense>
   )
 }
 

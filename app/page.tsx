@@ -107,7 +107,7 @@ export default function Home() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
       >
-        2025 타로 운세
+        {new Date().getFullYear()} 타로 운세
       </motion.h1>
       <div className="w-full max-w-4xl relative">
         <div className="flex flex-col items-center">
@@ -178,8 +178,8 @@ export default function Home() {
                       <div
                         className={`w-full h-full absolute rounded-[20px] shadow-lg ${
                           theme === "light"
-                            ? "bg-white border-2 border-pink-400 shadow-[0_0_10px_rgba(236,72,153,0.3)]"
-                            : "bg-futuristic-dark border-2 border-neon-pink"
+                            ? "bg-white border-2 border-blue-400 shadow-[0_0_10px_rgba(37,99,235,0.3)]"
+                            : "bg-futuristic-dark border-2 "
                         }`}
                         style={{
                           transform: "rotateY(180deg)",
@@ -192,10 +192,10 @@ export default function Home() {
                           alt="Card Front"
                           className="w-full h-full object-cover rounded-[18px]"
                         />
-                        <div className="absolute bottom-0 w-full bg-black bg-opacity-50 p-2">
+                        <div className="absolute bottom-0 w-full bg-black bg-opacity-50 p-2 rounded-bl-[20px] rounded-br-[20px]">
                           <h2
                             className={`text-lg font-bold text-center ${
-                              theme === "light" ? "text-white drop-shadow-[0_0_8px_rgba(236,72,153,0.5)]" : "text-neon-pink text-shadow-glow"
+                              theme === "light" ? "text-white drop-shadow-[0_0_8px_rgba(236,72,153,0.5)]" : "text-shadow-glow"
                             }`}
                           >
                             {selectedCard.name}
@@ -258,7 +258,7 @@ export default function Home() {
       </div>
       {!selectedCard && !isShuffling && (
         <p
-          className={`mt-8 text-lg ${
+          className={`mt-2 text-lg ${
             theme === "light" 
               ? "text-yellow-500 drop-shadow-[0_0_8px_rgba(234,179,8,0.5)]" 
               : "text-neon-yellow text-shadow-glow"

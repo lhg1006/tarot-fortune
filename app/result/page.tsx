@@ -70,9 +70,7 @@ export default function Result() {
         }`}>
           {card.name}
           <span className={`block text-2xl mt-2 ${
-            theme === "light"
-              ? "text-pink-500 drop-shadow-[0_0_8px_rgba(236,72,153,0.5)]"
-              : "text-neon-pink"
+            theme === "light" ? "text-white drop-shadow-[0_0_8px_rgba(236,72,153,0.5)]" : "text-white text-shadow-glow"
           }`}>
             {card.nameKor}
           </span>
@@ -111,8 +109,8 @@ export default function Result() {
               <div
                 className={`w-full h-full absolute rounded-[20px] shadow-lg ${
                   theme === "light"
-                    ? "bg-white border-2 border-pink-400 shadow-[0_0_10px_rgba(236,72,153,0.3)]"
-                    : "bg-futuristic-dark border-2 border-neon-pink"
+                    ? "bg-white border-2 border-blue-400 shadow-[0_0_10px_rgba(37,99,235,0.3)]"
+                    : "bg-futuristic-dark border-2"
                 }`}
                 style={{
                   transform: "rotateY(180deg)",

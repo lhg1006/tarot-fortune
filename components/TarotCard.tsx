@@ -134,8 +134,8 @@ const TarotCard: React.FC<TarotCardProps> = ({
         <div
           className={`w-full h-full absolute rounded-[20px] shadow-lg ${
             theme === "light"
-              ? "bg-white border-2 border-pink-400 shadow-[0_0_10px_rgba(236,72,153,0.3)]"
-              : "bg-futuristic-dark border-2 border-neon-pink"
+              ? "bg-white border-2 border-blue-400 shadow-[0_0_10px_rgba(37,99,235,0.3)]"
+              : "bg-futuristic-dark border-2"
           }`}
           style={{
             transform: "rotateY(180deg)",
@@ -146,12 +146,12 @@ const TarotCard: React.FC<TarotCardProps> = ({
           <img
             src={card.imageUrl || "/placeholder.svg"}
             alt="Card Front"
-            className="w-full h-full object-cover object-center"
+            className="w-full h-full object-cover object-center rounded-[20px]"
           />
-          <div className="absolute bottom-0 w-full bg-black bg-opacity-50 p-2 flex flex-col gap-1">
+          <div className="absolute bottom-0 w-full bg-black bg-opacity-50 p-2 flex flex-col gap-1 rounded-b-[20px]">
             <h2
               className={`text-lg font-bold text-center ${
-                theme === "light" ? "text-white drop-shadow-[0_0_8px_rgba(236,72,153,0.5)]" : "text-neon-pink text-shadow-glow"
+                theme === "light" ? "text-white drop-shadow-[0_0_8px_rgba(236,72,153,0.5)]" : "text-shadow-glow"
               }`}
             >
               {card.name}

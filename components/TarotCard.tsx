@@ -104,8 +104,8 @@ const TarotCard: React.FC<TarotCardProps> = ({
         transition: { duration: 0.1 }
       } : {}}
       onClick={() => !isShuffling && onSelect()}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
+      onMouseEnter={() => window.matchMedia("(hover: hover)").matches && setIsHovered(true)}
+      onMouseLeave={() => window.matchMedia("(hover: hover)").matches && setIsHovered(false)}
     >
       <motion.div
         className="w-full h-full relative preserve-3d"
@@ -175,7 +175,7 @@ const TarotCard: React.FC<TarotCardProps> = ({
           </div>
         </div>
 
-        {isHovered && !isSelected && (
+        {isHovered && !isSelected && window.matchMedia("(hover: hover)").matches && (
           <svg className="absolute inset-0 w-full h-full pointer-events-none" xmlns="http://www.w3.org/2000/svg">
             <rect
               width="100%"

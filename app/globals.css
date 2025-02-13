@@ -31,7 +31,6 @@ body {
   margin: 0;
   padding: 0;
   position: relative;
-  overflow: hidden;
 }
 
 body::before {
@@ -186,7 +185,6 @@ body::after {
 
 .result-container {
   position: relative;
-  overflow: hidden;
   border-radius: 24px;
   background: rgba(var(--background-start-rgb), 0.1);
   backdrop-filter: blur(10px);

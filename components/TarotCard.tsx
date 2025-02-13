@@ -157,16 +157,16 @@ const TarotCard: React.FC<TarotCardProps> = ({
             alt="Card Front"
             className="w-full h-full object-cover object-center rounded-[15px]"
           />
-          <div className="absolute bottom-0 w-full bg-black bg-opacity-50 p-2 flex flex-col gap-1 rounded-bl-[12px] rounded-br-[12px]">
+          <div className="absolute bottom-0 w-full bg-black bg-opacity-60 p-[2px] sm:p-2 flex flex-col gap-[1px] sm:gap-1 rounded-bl-[12px] rounded-br-[12px]">
             <h2
-              className={`text-lg font-bold text-center ${
+              className={`text-[8px] xs:text-[10px] sm:text-lg font-bold text-center leading-none ${
                 theme === "light" ? "text-white drop-shadow-[0_0_8px_rgba(236,72,153,0.5)]" : "text-shadow-glow"
               }`}
             >
               {card.name}
             </h2>
             <h3
-              className={`text-sm text-center ${
+              className={`text-[6px] xs:text-[8px] sm:text-sm text-center leading-none ${
                 theme === "light" ? "text-gray-200" : "text-neon-blue text-shadow-glow"
               }`}
             >

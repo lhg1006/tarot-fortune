@@ -156,8 +156,8 @@ export default function Home() {
                       <div
                         className={`w-full h-full absolute rounded-[20px] shadow-lg ${
                           theme === "light"
-                            ? "bg-black border-2 border-black shadow-[0_0_10px_rgba(37,99,235,0.2)]"
-                            : "bg-futuristic-dark border-2"
+                            ? "bg-black border-4 border-black shadow-[0_0_10px_rgba(37,99,235,0.2)]"
+                            : "bg-futuristic-dark border-4"
                         }`}
                         style={{
                           backfaceVisibility: "hidden",
@@ -178,8 +178,8 @@ export default function Home() {
                       <div
                         className={`w-full h-full absolute rounded-[20px] shadow-lg ${
                           theme === "light"
-                            ? "bg-white border-2 border-black shadow-[0_0_10px_rgba(37,99,235,0.3)]"
-                            : "bg-futuristic-dark border-2 "
+                            ? "bg-white border-4 border-black shadow-[0_0_10px_rgba(37,99,235,0.3)]"
+                            : "bg-futuristic-dark border-4 "
                         }`}
                         style={{
                           transform: "rotateY(180deg)",

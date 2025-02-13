@@ -11,10 +11,12 @@ export default function ShareButton({ card, className }: ShareButtonProps) {
   const handleShare = async () => {
     if (navigator.share) {
       try {
+        const currentYear = new Date().getFullYear()
+        const mainUrl = window.location.origin
+        const shareText = `오늘의 카드:\n${card.name} ${card.nameKor}✨\n\n키워드:\n${card.keywords}🔮\n\n메시지:\n${card.description}\n\n운세를 확인해보세요 👇\n${mainUrl}`
         await navigator.share({
-          title: "2025 타로 운세",
-          text: `오늘의 카드: ${card.name} - ${card.description}`,
-          url: window.location.href,
+          title: `🌟 ${currentYear} 타로 운세 결과 🌟`,
+          text: shareText,
         })
       } catch (error) {
         console.error("Error sharing:", error)

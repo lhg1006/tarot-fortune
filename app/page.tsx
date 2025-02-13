@@ -9,6 +9,7 @@ import { useTheme } from "next-themes"
 import { Moon, Sun } from "lucide-react"
 import TarotCard from "../components/TarotCard"
 import ShareButton from "../components/ShareButton"
+import Footer from "../components/Footer"
 
 export default function Home() {
   const [cards, setCards] = useState<TarotCardType[]>([])
@@ -271,7 +272,7 @@ export default function Home() {
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
         onClick={toggleTheme}
-        className={`mt-8 p-2 rounded-full shadow-lg transition-all duration-300 ${
+        className={`mt-8 mb-20 p-2 rounded-full shadow-lg transition-all duration-300 ${
           theme === "light"
             ? "bg-dark-100 border-2 border-dark-400 shadow-[0_0_15px_rgba(37,99,235,0.2)] hover:shadow-[0_0_20px_rgba(37,99,235,0.4)]"
             : "bg-futuristic-dark border-2 animate-glow-pulse"
@@ -284,6 +285,7 @@ export default function Home() {
           <Moon className="w-6 h-6 text-neon-yellow" />
         )}
       </motion.button>
+      <Footer />
     </main>
   )
 }

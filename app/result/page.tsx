@@ -8,6 +8,7 @@ import ShareButton from "../../components/ShareButton"
 import { clearTodaysCard } from "../../lib/utils"
 import { useTheme } from "next-themes"
 import { Moon, Sun } from "lucide-react"
+import Footer from "../../components/Footer"
 
 function ResultContent() {
   const searchParams = useSearchParams()
@@ -197,6 +198,7 @@ function ResultContent() {
           )}
         </motion.button>
       </div>
+      <Footer />
     </main>
   )
 }

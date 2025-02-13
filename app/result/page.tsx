@@ -133,7 +133,7 @@ export default function Result() {
                   ? "text-pink-500 drop-shadow-[0_0_8px_rgba(236,72,153,0.5)]" 
                   : "text-neon-pink text-shadow-glow"
               }`}>카드의 의미</h2>
-              <p className={`text-lg ${theme === "light" ? "text-gray-800" : "text-white"}`}>{card.description}</p>
+              <p className={`text-lg ${theme === "light" ? "text-gray-800" : "text-white"} whitespace-pre-wrap`}>{card.description}</p>
             </div>
             <div>
               <h2 className={`text-xl font-bold mb-2 ${

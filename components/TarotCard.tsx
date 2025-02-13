@@ -121,8 +121,8 @@ const TarotCard: React.FC<TarotCardProps> = ({
         <div
           className={`w-full h-full absolute rounded-[20px] shadow-lg overflow-hidden ${
             theme === "light" 
-              ? "bg-blue-50 border-4 border-black shadow-[0_0_10px_rgba(37,99,235,0.2)]" 
-              : "bg-futuristic-dark border-4"
+              ? "bg-blue-50 border-4 border-black shadow-[0_0_15px_rgba(37,99,235,0.3),0_0_30px_rgba(37,99,235,0.2)]" 
+              : "bg-futuristic-dark border-4 shadow-[0_0_20px_rgba(240,248,255,0.2),0_0_40px_rgba(240,248,255,0.1)]"
           }`}
           style={{
             backfaceVisibility: "hidden",
@@ -143,8 +143,8 @@ const TarotCard: React.FC<TarotCardProps> = ({
         <div
           className={`w-full h-full absolute rounded-[20px] shadow-lg ${
             theme === "light"
-              ? "bg-white border-4 border-black shadow-[0_0_10px_rgba(37,99,235,0.3)]"
-              : "bg-futuristic-dark border-4"
+              ? "bg-white border-4 border-black shadow-[0_0_20px_rgba(37,99,235,0.4),0_0_40px_rgba(236,72,153,0.2)]"
+              : "bg-futuristic-dark border-4 shadow-[0_0_25px_rgba(240,248,255,0.3),0_0_50px_rgba(255,0,255,0.2)]"
           }`}
           style={{
             transform: "rotateY(180deg)",

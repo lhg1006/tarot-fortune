@@ -212,7 +212,7 @@ export default function Home() {
                     </motion.div>
                   </div>
                   
-                  <p className={`text-lg mb-6 text-center ${theme === "light" ? "text-gray-800" : "text-white"}`}>
+                  <p className={`text-lg mb-6 text-center whitespace-pre-wrap ${theme === "light" ? "text-gray-800" : "text-white"}`}>
                     {selectedCard.description}
                   </p>
                   <div className="flex flex-col space-y-4">

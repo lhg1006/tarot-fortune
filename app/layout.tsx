@@ -15,7 +15,7 @@ export const metadata = {
   openGraph: {
     type: 'website',
     title: '2025 타로 운세',
-    url: 'https://2025-tarot.vercel.app/',
+    url: 'https://tarot-fortune.vercel.app/',
     description: 'MZ세대를 위한 현대적인 타로 운세 웹사이트',
     locale: 'ko_KR',
     images: [{

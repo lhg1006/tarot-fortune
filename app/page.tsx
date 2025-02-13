@@ -145,7 +145,7 @@ export default function Home() {
                     : "bg-gradient-to-br from-futuristic-dark to-black text-white"
                 }`}
               >
-                <div className="p-6">
+                <div className="p-6 result-container">
                   <div className="flex justify-center mb-6">
                     <motion.div className="w-48 h-72 relative preserve-3d"
                       initial={{ rotateY: 0 }}

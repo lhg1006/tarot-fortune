@@ -6,19 +6,113 @@
 
 :root {
   --foreground-rgb: 13, 13, 23;
-  --background-start-rgb: 224, 224, 224;
-  --background-end-rgb: 255, 255, 255;
+  --background-start-rgb: 255, 240, 255;
+  --background-end-rgb: 240, 255, 255;
+  --overlay-color: 150, 150, 255;
 }
 
 .dark {
   --foreground-rgb: 224, 224, 224;
-  --background-start-rgb: 13, 13, 23;
-  --background-end-rgb: 26, 26, 46;
+  --background-start-rgb: 13, 5, 30;
+  --background-end-rgb: 30, 10, 60;
+  --overlay-color: 100, 100, 255;
+}
+
+html {
+  min-height: 100vh;
 }
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(to bottom right, rgb(var(--background-start-rgb)), rgb(var(--background-end-rgb)));
+  background: linear-gradient(135deg, 
+              rgb(var(--background-start-rgb)) 0%,
+              rgb(var(--background-end-rgb)) 100%);
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: -100%;
+  left: -100%;
+  width: 300%;
+  height: 300%;
+  background: 
+    radial-gradient(circle at 50% 50%,
+      rgba(var(--overlay-color), 0.4),
+      rgba(var(--overlay-color), 0) 60%),
+    repeating-linear-gradient(45deg,
+      rgba(var(--overlay-color), 0.2) 0%,
+      rgba(var(--overlay-color), 0) 5%,
+      rgba(var(--overlay-color), 0.2) 10%);
+  filter: blur(3px);
+  animation: aurora 15s linear infinite;
+  pointer-events: none;
+  transform-origin: center center;
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(
+      4px 4px at 40% 40%,
+      rgba(var(--overlay-color), 0.7),
+      transparent 60%
+    ),
+    radial-gradient(
+      3px 3px at 60% 60%,
+      rgba(var(--overlay-color), 0.6),
+      transparent 55%
+    ),
+    radial-gradient(
+      5px 5px at 50% 50%,
+      rgba(var(--overlay-color), 0.65),
+      transparent 50%
+    );
+  animation: twinkle 4s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes aurora {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  25% {
+    transform: rotate(90deg) scale(1.1);
+  }
+  50% {
+    transform: rotate(180deg) scale(1);
+  }
+  75% {
+    transform: rotate(270deg) scale(1.1);
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+}
+
+@keyframes twinkle {
+  0% {
+    opacity: 0.3;
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-10px) scale(1.1);
+  }
+  100% {
+    opacity: 0.3;
+    transform: translateY(0) scale(1);
+  }
 }
 
 @layer utilities {
@@ -87,6 +181,86 @@ body {
   100% {
     opacity: 0;
     transform: scale(0);
+  }
+}
+
+.result-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 24px;
+  background: rgba(var(--background-start-rgb), 0.1);
+  backdrop-filter: blur(10px);
+  z-index: 0;
+}
+
+.result-container::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: 
+    radial-gradient(circle at 50% 50%,
+      rgba(var(--overlay-color), 0.3),
+      rgba(var(--overlay-color), 0) 70%),
+    repeating-linear-gradient(45deg,
+      rgba(var(--overlay-color), 0.15) 0%,
+      rgba(var(--overlay-color), 0) 5%,
+      rgba(var(--overlay-color), 0.15) 10%);
+  filter: blur(2px);
+  animation: container-aurora 20s linear infinite;
+  pointer-events: none;
+  transform-origin: center center;
+  z-index: -2;
+}
+
+.result-container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(
+      3px 3px at 30% 30%,
+      rgba(var(--overlay-color), 0.6),
+      transparent 60%
+    ),
+    radial-gradient(
+      2px 2px at 70% 70%,
+      rgba(var(--overlay-color), 0.5),
+      transparent 55%
+    );
+  animation: container-twinkle 6s ease-in-out infinite;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.result-container > * {
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes container-aurora {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(180deg) scale(1.05);
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+}
+
+@keyframes container-twinkle {
+  0%, 100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.8;
   }
 }
 

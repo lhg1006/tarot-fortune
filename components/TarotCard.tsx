@@ -155,9 +155,9 @@ const TarotCard: React.FC<TarotCardProps> = ({
           <img
             src={card.imageUrl || "/placeholder.svg"}
             alt="Card Front"
-            className="w-full h-full object-cover object-center rounded-[20px]"
+            className="w-full h-full object-cover object-center rounded-[15px]"
           />
-          <div className="absolute bottom-0 w-full bg-black bg-opacity-50 p-2 flex flex-col gap-1 rounded-b-[20px]">
+          <div className="absolute bottom-0 w-full bg-black bg-opacity-50 p-2 flex flex-col gap-1 rounded-bl-[12px] rounded-br-[12px]">
             <h2
               className={`text-lg font-bold text-center ${
                 theme === "light" ? "text-white drop-shadow-[0_0_8px_rgba(236,72,153,0.5)]" : "text-shadow-glow"

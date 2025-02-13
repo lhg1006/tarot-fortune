@@ -9,8 +9,8 @@ export interface TarotCard {
   imageDescription: string
 }
 const baseUrl = "https://raw.githubusercontent.com/lhg1006/portfolio-images/"
-const cardBackUrl = `${baseUrl}837cc7c6b29bc704887a63fde904a9d46df8acb0/images/taro/taro-card-back.png`
-
+// const cardBackUrl = `${baseUrl}837cc7c6b29bc704887a63fde904a9d46df8acb0/images/taro/taro-card-back.png`
+const cardBackUrl = `/tarot_back.png`
 export const tarotCards: TarotCard[] = [
   {
     id: 1,

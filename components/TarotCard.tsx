@@ -27,17 +27,22 @@ const TarotCard: React.FC<TarotCardProps> = ({
 }) => {
   const [isHovered, setIsHovered] = useState(false)
 
-  const sparkles = Array.from({ length: 20 }, (_, i) => (
-    <circle
+  const sparkles = Array.from({ length: 25 }, (_, i) => (
+    <motion.circle
       key={i}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 0.6 + Math.random() * 0.4 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.3 }}
       cx={`${Math.random() * 100}%`}
       cy={`${Math.random() * 100}%`}
-      r="1"
-      fill={theme === "light" ? "#3B82F6" : "#00FFFF"}
-      className="sparkle"
+      r={Math.random() * 2 + 2}
+      fill={theme === "light" ? "#FFD700" : "#F0F8FF"}
+      className="sparkle animate-pulse"
       style={{
-        animationDelay: `${Math.random() * 2}s`,
-        animationDuration: `${1 + Math.random()}s`,
+        animationDelay: `${Math.random() * 1.5}s`,
+        animationDuration: `${0.5 + Math.random() * 0.5}s`,
+        transform: `scale(${1.2 + Math.random() * 1.5})`
       }}
     />
   ))
@@ -93,7 +98,11 @@ const TarotCard: React.FC<TarotCardProps> = ({
       initial="initial"
       animate={isShuffling ? "shuffle" : isSelecting ? (isSelected ? "selected" : "spread") : "spread"}
       transition={isShuffling ? shuffleTransition : {}}
-      whileHover={!isSelecting && !isShuffling ? { scale: 1.05, zIndex: 10 } : {}}
+      whileHover={!isSelecting && !isShuffling ? { 
+        scale: 1.05, 
+        zIndex: 10,
+        transition: { duration: 0.1 }
+      } : {}}
       onClick={() => !isShuffling && onSelect()}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
@@ -112,7 +121,7 @@ const TarotCard: React.FC<TarotCardProps> = ({
         <div
           className={`w-full h-full absolute rounded-[20px] shadow-lg overflow-hidden ${
             theme === "light" 
-              ? "bg-blue-50 border-2 border-blue-300 shadow-[0_0_10px_rgba(37,99,235,0.2)]" 
+              ? "bg-blue-50 border-2 border-black shadow-[0_0_10px_rgba(37,99,235,0.2)]" 
               : "bg-futuristic-dark border-2"
           }`}
           style={{
@@ -134,7 +143,7 @@ const TarotCard: React.FC<TarotCardProps> = ({
         <div
           className={`w-full h-full absolute rounded-[20px] shadow-lg ${
             theme === "light"
-              ? "bg-white border-2 border-blue-400 shadow-[0_0_10px_rgba(37,99,235,0.3)]"
+              ? "bg-white border-2 border-black shadow-[0_0_10px_rgba(37,99,235,0.3)]"
               : "bg-futuristic-dark border-2"
           }`}
           style={{
@@ -180,22 +189,30 @@ const TarotCard: React.FC<TarotCardProps> = ({
             />
             {sparkles}
             <defs>
-              <linearGradient id="light-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="#3B82F6" stopOpacity="0.8">
-                  <animate attributeName="offset" values="0;1" dur="2s" repeatCount="indefinite" />
+              <radialGradient id="light-gradient" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+                <stop offset="0%" stopColor="#FFD700" stopOpacity="0.8">
+                  <animate attributeName="offset" values="0;0.3" dur="2s" repeatCount="indefinite" />
                 </stop>
                 <stop offset="100%" stopColor="#EC4899" stopOpacity="0">
-                  <animate attributeName="offset" values="0;1" dur="2s" repeatCount="indefinite" />
+                  <animate attributeName="offset" values="0.7;1" dur="2s" repeatCount="indefinite" />
                 </stop>
-              </linearGradient>
-              <linearGradient id="neon-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="#00FFFF" stopOpacity="0.8">
-                  <animate attributeName="offset" values="0;1" dur="2s" repeatCount="indefinite" />
+              </radialGradient>
+              <radialGradient id="neon-gradient" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+                <stop offset="0%" stopColor="#F0F8FF" stopOpacity="0.8">
+                  <animate attributeName="offset" values="0;0.3" dur="2s" repeatCount="indefinite" />
                 </stop>
                 <stop offset="100%" stopColor="#FF00FF" stopOpacity="0">
-                  <animate attributeName="offset" values="0;1" dur="2s" repeatCount="indefinite" />
+                  <animate attributeName="offset" values="0.7;1" dur="2s" repeatCount="indefinite" />
                 </stop>
-              </linearGradient>
+              </radialGradient>
+              <animateTransform
+                attributeName="transform"
+                type="rotate"
+                from="0 50 50"
+                to="360 50 50"
+                dur="10s"
+                repeatCount="indefinite"
+              />
             </defs>
           </svg>
         )}

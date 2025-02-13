@@ -141,7 +141,7 @@ export default function Home() {
                 transition={{ type: "spring", stiffness: 300, damping: 30 }}
                 className={`rounded-lg shadow-2xl overflow-hidden max-w-md w-full border ${
                   theme === "light"
-                    ? "bg-white/90 border-blue-400 shadow-[0_0_15px_rgba(37,99,235,0.3)]"
+                    ? "bg-white/90 border-black shadow-[0_0_15px_rgba(37,99,235,0.3)]"
                     : "bg-gradient-to-br from-futuristic-dark to-black text-white"
                 }`}
               >
@@ -156,7 +156,7 @@ export default function Home() {
                       <div
                         className={`w-full h-full absolute rounded-[20px] shadow-lg ${
                           theme === "light"
-                            ? "bg-blue-50 border-2 border-blue-300 shadow-[0_0_10px_rgba(37,99,235,0.2)]"
+                            ? "bg-black border-2 border-black shadow-[0_0_10px_rgba(37,99,235,0.2)]"
                             : "bg-futuristic-dark border-2"
                         }`}
                         style={{
@@ -178,7 +178,7 @@ export default function Home() {
                       <div
                         className={`w-full h-full absolute rounded-[20px] shadow-lg ${
                           theme === "light"
-                            ? "bg-white border-2 border-blue-400 shadow-[0_0_10px_rgba(37,99,235,0.3)]"
+                            ? "bg-white border-2 border-black shadow-[0_0_10px_rgba(37,99,235,0.3)]"
                             : "bg-futuristic-dark border-2 "
                         }`}
                         style={{
@@ -223,7 +223,7 @@ export default function Home() {
                         className={`w-full font-bold py-3 px-6 rounded-full text-lg shadow-lg ${
                           theme === "light"
                             ? "bg-blue-600 text-white shadow-[0_0_15px_rgba(37,99,235,0.3)] hover:shadow-[0_0_20px_rgba(37,99,235,0.5)]"
-                            : "bg-neon-blue text-futuristic-dark animate-glow-pulse"
+                            : "bg-neon-blue text-white animate-glow-pulse"
                         }`}
                       >
                         자세한 해석 보기
@@ -234,7 +234,7 @@ export default function Home() {
                       className={`w-full font-bold py-3 px-6 rounded-full text-lg shadow-lg ${
                         theme === "light"
                           ? "bg-pink-500 text-white shadow-[0_0_15px_rgba(236,72,153,0.3)] hover:shadow-[0_0_20px_rgba(236,72,153,0.5)]"
-                          : "bg-neon-pink text-futuristic-dark animate-glow-pulse"
+                          : "bg-neon-pink text-white animate-glow-pulse"
                       }`}
                     />
                     <motion.button
@@ -244,7 +244,7 @@ export default function Home() {
                       className={`w-full font-bold py-3 px-6 rounded-full text-lg shadow-lg ${
                         theme === "light"
                           ? "bg-yellow-400 text-gray-800 shadow-[0_0_15px_rgba(250,204,21,0.3)] hover:shadow-[0_0_20px_rgba(250,204,21,0.5)]"
-                          : "bg-futuristic-dark text-neon-yellow border border-neon-yellow animate-glow-pulse"
+                          : "bg-futuristic-dark text-white border border-neon-yellow animate-glow-pulse"
                       }`}
                     >
                       다시 뽑기
@@ -273,7 +273,7 @@ export default function Home() {
         onClick={toggleTheme}
         className={`mt-8 p-2 rounded-full shadow-lg transition-all duration-300 ${
           theme === "light"
-            ? "bg-blue-100 border-2 border-blue-400 shadow-[0_0_15px_rgba(37,99,235,0.2)] hover:shadow-[0_0_20px_rgba(37,99,235,0.4)]"
+            ? "bg-dark-100 border-2 border-dark-400 shadow-[0_0_15px_rgba(37,99,235,0.2)] hover:shadow-[0_0_20px_rgba(37,99,235,0.4)]"
             : "bg-futuristic-dark border-2 animate-glow-pulse"
         }`}
         aria-label={theme === "light" ? "다크 모드로 전환" : "라이트 모드로 전환"}

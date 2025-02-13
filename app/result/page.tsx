@@ -161,7 +161,7 @@ export default function Result() {
             className={`w-full font-bold py-3 px-6 rounded-full text-lg shadow-lg ${
               theme === "light"
                 ? "bg-blue-600 text-white shadow-[0_0_15px_rgba(37,99,235,0.3)] hover:shadow-[0_0_20px_rgba(37,99,235,0.5)]"
-                : "bg-neon-blue text-futuristic-dark animate-glow-pulse"
+                : "bg-neon-blue text-white animate-glow-pulse"
             }`}
           >
             다시 뽑기
@@ -171,7 +171,7 @@ export default function Result() {
             className={`w-full font-bold py-3 px-6 rounded-full text-lg shadow-lg ${
               theme === "light"
                 ? "bg-pink-500 text-white shadow-[0_0_15px_rgba(236,72,153,0.3)] hover:shadow-[0_0_20px_rgba(236,72,153,0.5)]"
-                : "bg-neon-pink text-futuristic-dark animate-glow-pulse"
+                : "bg-neon-pink text-white animate-glow-pulse"
             }`}
           />
         </div>

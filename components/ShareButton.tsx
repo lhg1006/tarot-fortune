@@ -29,7 +29,7 @@ export default function ShareButton({ card, className }: ShareButtonProps) {
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
       onClick={handleShare}
-      className={`bg-white text-purple-600 font-bold py-3 px-6 rounded-full text-lg shadow-lg flex items-center justify-center ${className}`}
+      className={`flex items-center justify-center ${className}`}
     >
       <Share2 className="w-5 h-5 mr-2" />
       결과 공유하기

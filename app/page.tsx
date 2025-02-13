@@ -88,18 +88,20 @@ export default function Home() {
     <main
       className={`flex min-h-screen flex-col items-center justify-center p-4 sm:p-6 transition-colors duration-300 ${
         theme === "light"
-          ? "bg-gradient-to-br from-gray-100 to-white text-gray-900"
+          ? "bg-gradient-to-br from-white to-blue-50 text-futuristic-dark"
           : "bg-gradient-radial from-futuristic-dark to-black text-white"
       }`}
     >
       <div
         className={`absolute inset-0 cyber-grid opacity-20 pointer-events-none ${
-          theme === "light" ? "bg-gray-200" : ""
+          theme === "light" ? "bg-blue-100" : ""
         }`}
       ></div>
       <motion.h1
         className={`text-3xl sm:text-4xl md:text-6xl font-display font-bold mb-8 ${
-          theme === "light" ? "text-futuristic-dark" : "text-neon-blue text-shadow-glow"
+          theme === "light" 
+            ? "text-blue-600 drop-shadow-[0_0_10px_rgba(37,99,235,0.5)]" 
+            : "text-neon-blue text-shadow-glow"
         }`}
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -139,21 +141,13 @@ export default function Home() {
                 transition={{ type: "spring", stiffness: 300, damping: 30 }}
                 className={`rounded-lg shadow-2xl overflow-hidden max-w-md w-full border ${
                   theme === "light"
-                    ? "bg-white border-gray-200 text-gray-900"
-                    : "bg-gradient-to-br from-futuristic-dark to-black border-neon-blue text-white"
+                    ? "bg-white/90 border-blue-400 shadow-[0_0_15px_rgba(37,99,235,0.3)]"
+                    : "bg-gradient-to-br from-futuristic-dark to-black text-white"
                 }`}
               >
                 <div className="p-6">
-                  <h2
-                    className={`text-3xl font-bold mb-4 text-center ${
-                      theme === "light" ? "text-futuristic-dark" : "text-neon-pink text-shadow-glow"
-                    }`}
-                  >
-                    {selectedCard.name}
-                  </h2>
                   <div className="flex justify-center mb-6">
-                    <motion.div
-                      className="w-48 h-72 relative preserve-3d"
+                    <motion.div className="w-48 h-72 relative preserve-3d"
                       initial={{ rotateY: 0 }}
                       animate={{ rotateY: 180 }}
                       transition={{ duration: 0.8 }}
@@ -162,8 +156,8 @@ export default function Home() {
                       <div
                         className={`w-full h-full absolute rounded-[20px] shadow-lg ${
                           theme === "light"
-                            ? "bg-gray-100 border-2 border-gray-300"
-                            : "bg-futuristic-dark border-2 border-neon-blue"
+                            ? "bg-blue-50 border-2 border-blue-300 shadow-[0_0_10px_rgba(37,99,235,0.2)]"
+                            : "bg-futuristic-dark border-2"
                         }`}
                         style={{
                           backfaceVisibility: "hidden",
@@ -177,14 +171,14 @@ export default function Home() {
                         />
                         <div
                           className={`absolute inset-0 ${
-                            theme === "light" ? "bg-grid" : "bg-cyber-grid"
+                            theme === "light" ? "bg-cyber-grid opacity-30" : "bg-cyber-grid"
                           } rounded-[18px]`}
                         ></div>
                       </div>
                       <div
-                        className={`w-full h-full absolute rounded-[20px] shadow-lg flex items-center justify-center ${
+                        className={`w-full h-full absolute rounded-[20px] shadow-lg ${
                           theme === "light"
-                            ? "bg-white border-2 border-gray-300"
+                            ? "bg-white border-2 border-pink-400 shadow-[0_0_10px_rgba(236,72,153,0.3)]"
                             : "bg-futuristic-dark border-2 border-neon-pink"
                         }`}
                         style={{
@@ -193,17 +187,34 @@ export default function Home() {
                           WebkitBackfaceVisibility: "hidden",
                         }}
                       >
-                        <h2
-                          className={`text-2xl font-bold text-center p-4 ${
-                            theme === "light" ? "text-futuristic-dark" : "text-neon-pink text-shadow-glow"
-                          }`}
-                        >
-                          {selectedCard.name}
-                        </h2>
+                        <img
+                          src={selectedCard.imageUrl || "/placeholder.svg"}
+                          alt="Card Front"
+                          className="w-full h-full object-cover rounded-[18px]"
+                        />
+                        <div className="absolute bottom-0 w-full bg-black bg-opacity-50 p-2">
+                          <h2
+                            className={`text-lg font-bold text-center ${
+                              theme === "light" ? "text-white drop-shadow-[0_0_8px_rgba(236,72,153,0.5)]" : "text-neon-pink text-shadow-glow"
+                            }`}
+                          >
+                            {selectedCard.name}
+                          </h2>
+                          <h3
+                            className={`text-sm text-center ${
+                              theme === "light" ? "text-gray-200" : "text-neon-blue text-shadow-glow"
+                            }`}
+                          >
+                            {selectedCard.nameKor}
+                          </h3>
+                        </div>
                       </div>
                     </motion.div>
                   </div>
-                  <p className="text-lg mb-6 text-center">{selectedCard.description}</p>
+                  
+                  <p className={`text-lg mb-6 text-center ${theme === "light" ? "text-gray-800" : "text-white"}`}>
+                    {selectedCard.description}
+                  </p>
                   <div className="flex flex-col space-y-4">
                     <Link href={`/result?id=${selectedCard.id}`} className="w-full">
                       <motion.button
@@ -211,7 +222,7 @@ export default function Home() {
                         whileTap={{ scale: 0.95 }}
                         className={`w-full font-bold py-3 px-6 rounded-full text-lg shadow-lg ${
                           theme === "light"
-                            ? "bg-futuristic-dark text-white"
+                            ? "bg-blue-600 text-white shadow-[0_0_15px_rgba(37,99,235,0.3)] hover:shadow-[0_0_20px_rgba(37,99,235,0.5)]"
                             : "bg-neon-blue text-futuristic-dark animate-glow-pulse"
                         }`}
                       >
@@ -222,7 +233,7 @@ export default function Home() {
                       card={selectedCard}
                       className={`w-full font-bold py-3 px-6 rounded-full text-lg shadow-lg ${
                         theme === "light"
-                          ? "bg-futuristic-secondary text-white"
+                          ? "bg-pink-500 text-white shadow-[0_0_15px_rgba(236,72,153,0.3)] hover:shadow-[0_0_20px_rgba(236,72,153,0.5)]"
                           : "bg-neon-pink text-futuristic-dark animate-glow-pulse"
                       }`}
                     />
@@ -232,7 +243,7 @@ export default function Home() {
                       onClick={handleReset}
                       className={`w-full font-bold py-3 px-6 rounded-full text-lg shadow-lg ${
                         theme === "light"
-                          ? "bg-gray-200 text-futuristic-dark border border-gray-300"
+                          ? "bg-yellow-400 text-gray-800 shadow-[0_0_15px_rgba(250,204,21,0.3)] hover:shadow-[0_0_20px_rgba(250,204,21,0.5)]"
                           : "bg-futuristic-dark text-neon-yellow border border-neon-yellow animate-glow-pulse"
                       }`}
                     >
@@ -247,7 +258,11 @@ export default function Home() {
       </div>
       {!selectedCard && !isShuffling && (
         <p
-          className={`mt-8 text-lg ${theme === "light" ? "text-futuristic-dark" : "text-neon-yellow text-shadow-glow"}`}
+          className={`mt-8 text-lg ${
+            theme === "light" 
+              ? "text-yellow-500 drop-shadow-[0_0_8px_rgba(234,179,8,0.5)]" 
+              : "text-neon-yellow text-shadow-glow"
+          }`}
         >
           카드를 선택하여 오늘의 운세를 확인하세요.
         </p>
@@ -258,15 +273,15 @@ export default function Home() {
         onClick={toggleTheme}
         className={`mt-8 p-2 rounded-full shadow-lg transition-all duration-300 ${
           theme === "light"
-            ? "bg-gray-200 text-futuristic-dark border-2 border-gray-300"
-            : "bg-futuristic-dark border-2 border-neon-blue animate-glow-pulse"
+            ? "bg-blue-100 border-2 border-blue-400 shadow-[0_0_15px_rgba(37,99,235,0.2)] hover:shadow-[0_0_20px_rgba(37,99,235,0.4)]"
+            : "bg-futuristic-dark border-2 animate-glow-pulse"
         }`}
         aria-label={theme === "light" ? "다크 모드로 전환" : "라이트 모드로 전환"}
       >
         {theme === "light" ? (
-          <Moon className="w-6 h-6 text-futuristic-dark" />
+          <Sun className="w-6 h-6 text-blue-600" />
         ) : (
-          <Sun className="w-6 h-6 text-neon-yellow" />
+          <Moon className="w-6 h-6 text-neon-yellow" />
         )}
       </motion.button>
     </main>

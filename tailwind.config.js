@@ -64,8 +64,6 @@ module.exports = {
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "cyber-grid":
-          "linear-gradient(to right, #00FFFF 1px, transparent 1px), linear-gradient(to bottom, #00FFFF 1px, transparent 1px)",
       },
       animation: {
         "glow-pulse": "glow-pulse 2s infinite",

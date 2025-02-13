@@ -20,8 +20,8 @@ export const metadata = {
     locale: 'ko_KR',
     images: [{
       url: 'https://raw.githubusercontent.com/lhg1006/portfolio-images/623216ea41f64878a5b3e96730ced5e09345f4f9/images/project/tarot-0.png',
-      width: 1200,
-      height: 630,
+      width: 800,
+      height: 400,
     }]
   },
 }

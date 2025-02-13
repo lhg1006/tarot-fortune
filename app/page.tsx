@@ -107,7 +107,7 @@ export default function Home() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
       >
-        {new Date().getFullYear()} 타로 운세
+        오늘의 타로
       </motion.h1>
       <div className="w-full max-w-4xl relative">
         <div className="flex flex-col items-center">

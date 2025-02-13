@@ -167,12 +167,12 @@ export default function Home() {
                         <img
                           src={selectedCard.backImageUrl || "/placeholder.svg"}
                           alt="Card Back"
-                          className="w-full h-full object-cover rounded-[18px] opacity-50"
+                          className="w-full h-full object-cover rounded-[15px] opacity-50"
                         />
                         <div
                           className={`absolute inset-0 ${
                             theme === "light" ? "bg-cyber-grid opacity-30" : "bg-cyber-grid"
-                          } rounded-[18px]`}
+                          } rounded-[15px]`}
                         ></div>
                       </div>
                       <div
@@ -190,9 +190,9 @@ export default function Home() {
                         <img
                           src={selectedCard.imageUrl || "/placeholder.svg"}
                           alt="Card Front"
-                          className="w-full h-full object-cover rounded-[18px]"
+                          className="w-full h-full object-cover rounded-[15px]"
                         />
-                        <div className="absolute bottom-0 w-full bg-black bg-opacity-50 p-2 rounded-bl-[20px] rounded-br-[20px]">
+                        <div className="absolute bottom-0 w-full bg-black bg-opacity-50 p-2 rounded-bl-[12px] rounded-br-[12px]">
                           <h2
                             className={`text-lg font-bold text-center ${
                               theme === "light" ? "text-white drop-shadow-[0_0_8px_rgba(236,72,153,0.5)]" : "text-shadow-glow"

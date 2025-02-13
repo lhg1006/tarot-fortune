@@ -99,11 +99,11 @@ export default function Result() {
                 <img
                   src={card.backImageUrl || "/placeholder.svg"}
                   alt="Card Back"
-                  className="w-full h-full object-cover rounded-[18px] opacity-50"
+                  className="w-full h-full object-cover rounded-[15px] opacity-50"
                 />
                 <div className={`absolute inset-0 ${
                   theme === "light" ? "bg-cyber-grid opacity-30" : "bg-cyber-grid"
-                } rounded-[18px]`}></div>
+                } rounded-[15px]`}></div>
               </div>
               {/* Front of the card */}
               <div
@@ -121,7 +121,7 @@ export default function Result() {
                 <img
                   src={card.imageUrl}
                   alt={card.name}
-                  className="w-full h-full object-cover rounded-[18px]"
+                  className="w-full h-full object-cover rounded-[15px]"
                 />
               </div>
             </motion.div>

@@ -132,11 +132,11 @@ const TarotCard: React.FC<TarotCardProps> = ({
           <img
             src={card.backImageUrl || "/placeholder.svg"}
             alt="Card Back"
-            className={`w-full h-full object-cover object-center rounded-[18px] ${theme === "light" ? "opacity-100" : "opacity-80"}`}
+            className={`w-full h-full object-cover object-center rounded-[15px] ${theme === "light" ? "opacity-100" : "opacity-80"}`}
           />
           <div className={`absolute inset-0 ${
             theme === "light" ? "bg-cyber-grid opacity-30" : "bg-cyber-grid"
-          } rounded-[18px]`}></div>
+          } rounded-[15px]`}></div>
         </div>
 
         {/* Front of the card */}

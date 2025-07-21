@@ -2,6 +2,9 @@
 
 Next.js로 구현한 타로 운세 웹 애플리케이션입니다. 사용자는 타로 카드를 선택하고 그에 따른 운세를 확인할 수 있습니다.
 
+## 데모
+https://tarot-fortune.vercel.app/
+
 ## 주요 기능
 
 - 타로 카드 선택
@@ -63,5 +66,4 @@ yarn dev
 http://localhost:3000
 ```
 
-## 데모
-https://tarot-fortune.vercel.app/
+
